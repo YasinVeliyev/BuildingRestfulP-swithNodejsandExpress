@@ -1,0 +1,25 @@
+{
+  "name": "restful_api_with_node_and_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasinVeliyev/BuildingRestfulP-swithNodejsandExpress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YasinVeliyev/BuildingRestfulP-swithNodejsandExpress/issues"
+  },
+  "homepage": "https://github.com/YasinVeliyev/BuildingRestfulP-swithNodejsandExpress#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9",
+    "morgan": "^1.10.0"
+  }
+}
