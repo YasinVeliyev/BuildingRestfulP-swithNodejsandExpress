@@ -16,3 +16,23 @@ exports.getContacts = catchAsync(async (req, res) => {
 	let contacts = await Contact.find();
 	return res.json({ contacts });
 });
+
+exports.getContactByİd = catchAsync(async (req, res) => {
+	let contact = await Contact.findById(req.params.contactId);
+	return res.json({ contact });
+});
+
+exports.updateContact = catchAsync(async (req, res) => {
+	const { firstName, lastName, email, company, phone } = req.body;
+	let contact = await Contact.findByIdAndUpdate(
+		req.params.contactId,
+		{ firstName, lastName, email, company, phone },
+		{ new: true },
+	);
+	return res.json({ contact });
+});
+
+exports.deleteContact = catchAsync(async (req, res) => {
+	let contact = await Contact.findByIdAndDelete(req.params.contactId);
+	return res.status(204).json({ contact });
+});

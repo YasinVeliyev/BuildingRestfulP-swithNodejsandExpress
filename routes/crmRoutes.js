@@ -1,19 +1,11 @@
 const crmController = require("../controllers/crmController");
+const middleware = require("../middlewares/middlewware");
 
 exports.routes = (app) => {
-	app.route("/contact")
-		.get((req, res, next) => {
-			console.log(`Request from ${req.originalUrl}`);
-			console.log(`Request type ${req.method}`);
-			next();
-		}, crmController.getContacts)
-		.post(crmController.addNewContact);
+	app.route("/contact").get(middleware, crmController.getContacts).post(crmController.addNewContact);
 
 	app.route("/contact/:contactId")
-		.put((req, res) => {
-			res.send("PUT request successful");
-		})
-		.delete((req, res) => {
-			res.send("Delete request successful");
-		});
+		.get(crmController.getContactByİd)
+		.put(crmController.updateContact)
+		.delete(crmController.deleteContact);
 };

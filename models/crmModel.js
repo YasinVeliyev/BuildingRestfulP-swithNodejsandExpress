@@ -9,9 +9,9 @@ const contactSchema = new mongoose.Schema({
 		type: String,
 		required: "Enter last name",
 	},
-	email: { type: String, required: true },
+	email: { type: String, required: true, unique: true },
 	company: String,
-	phone: { type: String, required: true },
+	phone: { type: String, required: true, unique: true },
 	created_date: {
 		type: Date,
 		default: Date.now,
